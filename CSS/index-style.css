@@ -10,6 +10,9 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+a{
+    text-decoration: none;
+}
 
 .glass_pane {
     /* From https://css.glass */
@@ -323,7 +326,6 @@ main {
 .card img {
     border-radius: 5px 5px 0 0;
     height: 300px;
-
     width: 100px;
     object-fit: cover;
 }
