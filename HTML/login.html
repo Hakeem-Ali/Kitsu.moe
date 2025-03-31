@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitsu.moe</title>
+    <link rel="stylesheet" href="/CSS/login-style.css">
+</head>
+
+<body style="background-image: url('/Media/wp5118182-ps4-4k-anime-wallpapers.jpg');">
+    <header class="header_container glass_pane">
+        <div class="make_center top_bar">
+            <nav class="make_center">
+                <img src="/Media/kitsune-icon-20-removebg-preview.png" alt="Kitsu Icon">
+                <ul class="make_center">
+                    <li>Kitsu</li>
+                    <li>Home</li>
+                    <li onclick="toggleDropdown()">Genres</li>
+                    <li>Catalogue</li>
+                </ul>
+            </nav>
+            <div class="login_button"><a target="_blank" href="/HTML/login.html">Login</a></div>
+        </div>
+    </header>
+
+    <div id="menu" class="dropdown_content make_center glass_pane">
+        <div class="make_vertical">
+            <a target="_blank" href="#">Action</a>
+            <a target="_blank" href="#">Adventure</a>
+            <a target="_blank" href="#">Comedy</a>
+            <a target="_blank" href="#">Drama</a>
+        </div>
+        <div class="make_vertical">
+            <a target="_blank" href="#">Fantasy</a>
+            <a target="_blank" href="#">Historical</a>
+            <a target="_blank" href="#">Horror</a>
+            <a target="_blank" href="#">Mystery</a>
+        </div>
+        <div class="make_vertical">
+            <a target="_blank" href="#">Romance</a>
+            <a target="_blank" href="#">Sci-Fi</a>
+            <a target="_blank" href="#">Shounen</a>
+            <a target="_blank" href="#">Supernatural</a>
+        </div>
+    </div>
+
+    <main class="main_container">
+
+        <section class="hero">
+            <div class="make_center">
+                <h1>Welcome</h1>
+            </div>
+        </section>
+
+        </section>
+        <section class="make_center">
+            <form class="make_vertical glass_pane_2 make_center login_container">
+                <label for="text">Enter Username</label>
+                <input type="text" placeholder="Username" required>
+
+                <label for="text">Enter Password</label>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+
+        </section>
+    </main>
+
+    <footer class="footer_container">
+        <div class="make_center bottom_bar">
+            <nav class="make_center upperside">
+                <ul class="make_center">
+                    <li><img class="footer_logo" src="/Media/kitsune-icon-20-removebg-preview.png" alt="Kitsu Icon">
+                    </li>
+                    <li><a target="_blank" href="/HTML/about.html">Kitsu</a></li>
+                    <li><a target="_blank" href="/HTML/about.html">Pricing</a></li>
+                    <li><a target="_blank" href="/HTML/about.html">FAQs</a></li>
+                    <li><a target="_blank" href="/HTML/about.html">Contact Us</a></li>
+                    <li><a target="_blank" href="/HTML/about.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <hr>
+
+        <div class="make_center lowerside">
+            <span>&#169; Clockwork Studios 2025</span>
+            <ul class="make_center">
+                <li><a target="_blank" href="https://github.com"><img class="footer_image" src="/Media/github.png"
+                            alt="GitHub"></a>
+                </li>
+                <li><a target="_blank" href="https://github.com"><img class="footer_image" src="/Media/Instagram.png"
+                            alt="Instagram"></a></li>
+                <li><a target="_blank" href="https://github.com"><img class="footer_image" src="/Media/twitter.svg"
+                            alt="Twitter"></a>
+                </li>
+                <li><a target="_blank" href="https://github.com"><img class="footer_image" src="/Media/youtube.svg"
+                            alt="YouTube"></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+
+    <script src="/Javascript/script.js"></script>
+
+</body>
+
+</html>
