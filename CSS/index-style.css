@@ -22,6 +22,10 @@
 }
 
 
+/*
+Header
+*/
+
 .login_button {
     font-size: 18px;
     position: relative;
@@ -31,12 +35,6 @@
     border: 1px solid rgba(255, 255, 255, 0.676);
     border-radius: 200px;
     background-color: rgba(70, 57, 57, 0.396);
-
-    /* height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px; */
 }
 
 nav>ul {
@@ -144,15 +142,21 @@ nav>img {
     flex-direction: column;
 }
 
+/*
+Footer
+*/
+
 hr {
     width: 70%;
     margin-left: 15%;
 }
 
 .footer_container>div {
-    width: 70%;
-    margin-left: 15%;
-    height: 100px;
+    width: 100%;
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
 }
 
 .footer_image {
@@ -222,130 +226,156 @@ hr {
 }
 
 .footer_image {
-    height: 25px;
+    height: 30px;
     width: auto;
+    margin-left: 3em;
 }
 
-/* footer{
-    position: absolute;
-} */
+@media screen and (max-width: 1000px) {
+    footer {
+        position: relative;
+        top: 20em;
+        height: fit-content;
+    }
+
+    .upperside>ul {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .lowerside>ul {
+        width: 100%;
+        max-width: 100%;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .lowerside>ul>li {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer_image {
+        height: 25px;
+        width: auto;
+    }
+
+
+}
+
+
+/*
+Main
+*/
 
 main {
-    margin-left: 15%;
+    margin: 0 auto;
     width: 70%;
-    height: fit-content;
     min-height: 660px;
-    height: 1000px;
-    /* * height: 3000px;
-    border: 4px green solid; */
+    height: fit-content;
 }
 
 .main_container {
     position: relative;
     top: 15em;
+    text-align: center;
+}
+
+@media screen and (min-width: 1300px) {
+    .extra_spacing_for_cards {
+        height: 700px;
+        margin: 3em 0;
+    }
+}
+
+.extra_spacing_for_cards {
+    margin: 0em 2em;
 }
 
 .card_content {
-    min-height: fit-content;
-    height: 800px;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    gap: 10%;
+    gap: 5%;
+    justify-content: center;
     align-items: center;
-}
-
-/* .card {
-    
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-    width: 250px;
-    margin: 5em;
-}
-
-.card>img {
-    height: 100%;
-}
-
-
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-
-.card_container {
-    padding: 2px 16px;
-} */
-
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(111, 109, 163, 0.253);
-}
-
-
-.card img {
-    border-radius: 5px 5px 0 0;
-    opacity: 1;
-    height: 350px;
+    padding: 2em 0;
 }
 
 .card {
     border: 1px rgba(84, 74, 74, 0.728) solid;
     border-radius: 5px;
-    flex-wrap: wrap;
     width: 250px;
-    margin-left: 5em;
-    position: relative;
-    top: -1em;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(111, 109, 163, 0.3);
+}
+
+.card img {
+    border-radius: 5px 5px 0 0;
+    height: 300px;
+
+    width: 100px;
+    object-fit: cover;
 }
 
 .card_container h4,
 .card_container p {
     padding: 10px;
     color: white;
-    font: 20px;
-    text-shadow: #0a122aff;
+    font-size: 16px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
 }
 
 .hero {
-    display: inline-flexbox;
-}
-
-.hero>div>h1,
-.hero>div>p,
-.hero>div>button {
-    color: white;
-
+    text-align: center;
+    position: relative;
+    top: -4em;
 }
 
 .hero>div>h1 {
-    font-size: 60px;
     position: relative;
-    top: -2.3em;
+    top: -1em;
 }
 
 .hero>div>p {
-    font-size: 20px;
     position: relative;
-    top: -6em;
+    top: -3em;
 }
 
-/* 
-.gradmient_text_title {
-    background: linear-gradient(45deg, #d55e40, #db925a, white);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-} */
+.hero h1 {
+    font-size: 60px;
+    color: white;
+    margin-bottom: 10px;
+}
 
-.hero>div>button {
-    position: absolute;
-    top: 3.5em;
+.hero p {
     font-size: 20px;
-    border: white 1px solid;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    font-size: 20px;
+    border: 1px solid white;
     border-radius: 10px;
     padding: 1em 2em;
-    background-color: rgba(110, 37, 37, 0.78);}
+    background-color: rgba(110, 37, 37, 0.78);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-.hero>div>button:hover {
+.hero button:hover {
     background-color: rgba(154, 40, 40, 0.828);
 }
 
@@ -353,7 +383,22 @@ html {
     font-size: 16px;
 }
 
+/*
+Responsiveness
+*/
+
 @media screen and (max-width: 1200px) {
+
+    .hero>div>h1 {
+        position: relative;
+        top: -1em;
+    }
+
+    .hero>div>p {
+        position: relative;
+        top: -1em;
+    }
+
     .login_button {
         left: 40em;
     }
