@@ -291,6 +291,36 @@ main {
     text-align: center;
 }
 
+.display_section {
+    margin: 1em 0;
+    width: 100%;
+    height: 400px;
+}
+
+.display_bar button {
+    background-color: rgba(35, 36, 38, 0.327);
+    width: 400px;
+    height: 40px;
+    border-radius: 50px;
+    padding-left: 1em;
+    color: black;
+    font-size: 1em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.display_bar {
+    position: relative;
+    top: 1em;
+    left: 1em;
+}
+
+.display_bar img {
+    height: 30px;
+    position: relative;
+    top: 8px;
+    right: 45px;
+}
+
 @media screen and (min-width: 1300px) {
     .extra_spacing_for_cards {
         height: 700px;
@@ -383,6 +413,7 @@ main {
 
 html {
     font-size: 16px;
+    background-color: #2A2B2E;
 }
 
 /*

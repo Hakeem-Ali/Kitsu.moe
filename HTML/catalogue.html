@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitsu.moe</title>
+    <link rel="stylesheet" href="/CSS/catalogue-style.css">
+</head>
+
+<body style="background-image: url('/Media/yande.re\ 596129\ landscape\ tagme.jpg');">
+    <header class="header_container glass_pane">
+        <div class="make_center top_bar">
+            <nav class="make_center">
+                <img src="/Media/kitsune-icon-20-removebg-preview.png" alt="Kitsu Icon">
+                <ul class="make_center">
+                    <li>Kitsu</li>
+                    <li>Home</li>
+                    <li onclick="toggleDropdown()">Genres</li>
+                    <li>Catalogue</li>
+                </ul>
+            </nav>
+            <div class="login_button"><a target="_blank" href="/HTML/login.html">Login</a></div>
+        </div>
+    </header>
+
+    <!-- inside the onclick functions curved brackets, add the api genres for filtering-->
+    <div id="menu" class="dropdown_content make_center glass_pane">
+        <div class="make_vertical">
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Action</a>
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Adventure</a>
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Comedy</a>
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Drama</a>
+        </div>
+        <div class="make_vertical">
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Fantasy</a>
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Historical</a>
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Horror</a>
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Mystery</a>
+        </div>
+        <div class="make_vertical">
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Romance</a>
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Sci-Fi</a>
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Shounen</a>
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Supernatural</a>
+        </div>
+    </div>
+
+    <main class="main_container">
+        <section class="hero">
+            <div class="make_center">
+
+                <!-- if the user filters by genres then change to 'Popular [Insert Genre] Anime' -->
+                <h1 id="default_catalogue_title">Popular Anime</h1>
+
+            </div>
+
+
+            <!-- <div class="display_section make_center">
+                <div class="display_bar">
+                    <input type="text" name="" id="search_anime" placeholder="Search Anime...">
+                    <button type="submit"><img src="/Media/search_icon.png" alt="Search Anime"></button>
+                </div>
+            </div> -->
+
+            <div class="make_center">
+                <div class="glass_pane filter_by_genre">
+
+                    <!-- maybe remove the target and href attributes for
+                     something like an onclick inside the anchor
+                     tag. The page isn't supposed to reload, instead, it's
+                     supposed to display a new set of cards -->
+
+                    <div class="make_horizontal upperside_genres">
+                        <!-- inside the onclick functions curved brackets, add the api genres for filtering-->
+                        <a onclick="display_genre()" href="#" class="desktop_upper_first mobile_upper_first">Action</a>
+                        <a onclick="display_genre()" href="#">Adventure</a>
+                        <a onclick="display_genre()" href="#" class="mobile_upper_last">Comedy</a>
+                        <a onclick="display_genre()" href="#">Drama</a>
+                        <a onclick="display_genre()" href="#">Fantasy</a>
+                        <a onclick="display_genre()" href="#" class="deskptop_upper_last">Historical</a>
+                    </div>
+
+                    <div class="make_horizontal">
+                        <a onclick="display_genre()" href="#" class="desktop_lower_first">Horror</a>
+                        <a onclick="display_genre()" href="#">Mystery</a>
+                        <a onclick="display_genre()" href="#">Romance</a>
+                        <a onclick="display_genre()" href="#" class="mobile_lower_first">Sci-Fi</a>
+                        <a onclick="display_genre()" href="#">Shounen</a>
+                        <a onclick="display_genre()" href="#"
+                            class="desktop_lower_last mobile_lower_last">Supernatural</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="card_content">
+
+            <!-- the anchor and everything inside is what you are going 
+             to be putting inside the javascript render function -->
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div id="anime_card" class="extra_spacing_for_cards">
+                <a onclick="open_info_page()" target="_blank" href="/HTML/info.html">
+                    <div class="card">
+                        <img src="/Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+
+        <div class="pagination_buttons">
+            <button id="prev_page"><img src="/Media/left-arrow.png" alt="previous page"></button>
+            <button id="next_page"><img src="/Media/right-arrow.png" alt="next page"></button>
+        </div>
+
+    </main>
+
+    <footer class="footer_container">
+        <div class="make_center bottom_bar">
+            <nav class="make_center upperside">
+                <ul class="make_center">
+                    <li><img class="footer_logo" src="/Media/kitsune-icon-20-removebg-preview.png" alt="Kitsu Icon">
+                    </li>
+                    <li><a target="_blank" href="/HTML/about.html">Kitsu</a></li>
+                    <li><a target="_blank" href="/HTML/about.html">Pricing</a></li>
+                    <li><a target="_blank" href="/HTML/about.html">FAQs</a></li>
+                    <li><a target="_blank" href="/HTML/about.html">Contact Us</a></li>
+                    <li><a target="_blank" href="/HTML/about.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <hr>
+
+        <div class="make_center lowerside">
+            <span>&#169; Clockwork Studios 2025</span>
+            <ul class="make_center">
+                <li><a target="_blank" href="https://github.com"><img class="footer_image" src="/Media/github.png"
+                            alt="GitHub"></a>
+                </li>
+                <li><a target="_blank" href="https://github.com"><img class="footer_image" src="/Media/Instagram.png"
+                            alt="Instagram"></a></li>
+                <li><a target="_blank" href="https://github.com"><img class="footer_image" src="/Media/twitter.svg"
+                            alt="Twitter"></a>
+                </li>
+                <li><a target="_blank" href="https://github.com"><img class="footer_image" src="/Media/youtube.svg"
+                            alt="YouTube"></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+
+    <script src="/Javascript/script.js"></script>
+
+</body>
+
+</html>
