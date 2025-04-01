@@ -34,7 +34,12 @@
         </div>
     </header>
 
-    <!-- inside the onclick functions curved brackets, add the api genres for filtering-->
+    <!-- inside the onclick functions curved brackets, add the api genres for filtering
+            the display_genres function does not currently exist but what it does it reroute the
+            user to the catalogue page and automatically filter for the clicked genre. 
+    
+            you can add your own IDs if needed
+        -->
     <div id="menu" class="dropdown_content make_center glass_pane">
         <div class="make_vertical">
             <a onclick="display_genre()" href="/HTML/catalogue.html">Action</a>
@@ -59,13 +64,14 @@
     <main class="main_container">
         <section class="hero">
             <div class="make_center">
-
-                <!-- if the user filters by genres then change to 'Popular [Insert Genre] Anime' -->
-                <h1 id="default_catalogue_title">Popular Anime</h1>
-
+                <!-- if the user filters by genres then change text to 'Popular [Insert Genre] Anime' -->
+                <div>
+                    <h1 id="default_catalogue_title">Popular Anime</h1>
+                </div>
             </div>
 
-
+            <!-- ignore the comment, I was trying to implement a search bar but a certain aspect was too tricky -->
+            
             <!-- <div class="display_section make_center">
                 <div class="display_bar">
                     <input type="text" name="" id="search_anime" placeholder="Search Anime...">
@@ -78,7 +84,7 @@
 
                     <!-- maybe remove the target and href attributes for
                      something like an onclick inside the anchor
-                     tag. The page isn't supposed to reload, instead, it's
+                     tag. The page is NOT supposed to reload, instead, it is
                      supposed to display a new set of cards -->
 
                     <div class="make_horizontal upperside_genres">

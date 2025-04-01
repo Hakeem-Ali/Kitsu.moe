@@ -33,7 +33,12 @@
         </div>
     </header>
 
-    <!-- inside the onclick functions curved brackets, add the api genres for filtering-->
+    <!-- inside the onclick functions curved brackets, add the api genres for filtering
+        the display_genres function does not currently exist but what it does it reroute the
+        user to the catalogue page and automatically filter for the clicked genre. 
+
+        you can add your own IDs if needed
+    -->
     <div id="menu" class="dropdown_content make_center glass_pane">
         <div class="make_vertical">
             <a onclick="display_genre()" href="/HTML/catalogue.html">Action</a>
@@ -65,7 +70,13 @@
 
         </section>
         <section class="make_center">
-            <form class="make_vertical glass_pane_2 make_center login_container">
+
+            <!-- area for login, needs authorization
+         
+            username: bob
+            password: bobpass
+        -->
+            <form id="login_form" class="make_vertical glass_pane_2 make_center login_container">
                 <label for="text">Enter Username</label>
                 <input type="text" placeholder="Username" required>
 
