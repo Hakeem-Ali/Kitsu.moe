@@ -38,6 +38,11 @@ a {
 Header
 */
 
+.user_icon {
+    position: relative;
+    left: 70em;
+}
+
 .login_button {
     font-size: 18px;
     position: relative;
@@ -462,7 +467,8 @@ Responsiveness
         top: -1em;
     }
 
-    .login_button {
+    .login_button,
+    .user_icon {
         left: 40em;
     }
 
@@ -499,6 +505,13 @@ Responsiveness
         display: block;
         text-align: center;
         width: 90%;
+        margin: 0 auto;
+    }
+
+    .user_icon {
+        left: 0;
+        position: static;
+        display: block;
         margin: 0 auto;
     }
 
