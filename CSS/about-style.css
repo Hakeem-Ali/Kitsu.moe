@@ -38,11 +38,13 @@ Header
     font-size: 18px;
     position: relative;
     left: 60em;
+    /* Consider using flexbox */
     display: inline-block;
     padding: 0.5em 1.2em;
     border: 1px solid rgba(255, 255, 255, 0.676);
     border-radius: 200px;
     background-color: rgba(70, 57, 57, 0.396);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 nav>ul {
@@ -51,17 +53,27 @@ nav>ul {
 
 nav>ul>li {
     list-style-type: none;
-    display: inline-block;
+    display: inline-flex;
     padding: 10px 30px;
     font-size: 18px;
     height: 100%;
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.15s ease, transform 0.1s ease;
+    transition: font-size 0.3s ease, transform 0.2s ease;
 }
 
-nav>ul>li:hover,
-.login_button:hover,
+nav>ul>li:hover {
+    background: rgba(46, 38, 38, 0.34);
+    font-size: 20px;
+    /* transform: scale(1.05); */
+}
+
+.dropdown_content>div>a {
+    transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
 .dropdown_content>div>a:hover {
     background: rgba(46, 38, 38, 0.34);
 }
@@ -69,6 +81,7 @@ nav>ul>li:hover,
 .login_button:hover {
     border: 1px solid white;
     background: #0030538e;
+
 }
 
 * {
@@ -78,10 +91,14 @@ nav>ul>li:hover,
 
 body {
     background-color: #2A2B2E;
+    margin: 0;
 }
 
-img {
-    display: inline;
+img,
+picture,
+video {
+    display: block;
+    max-width: 100%;
 }
 
 * {
@@ -97,9 +114,19 @@ video {
 
 .make_center {
     display: flex;
+    /*could be changed */
     flex-direction: row;
     align-items: center;
     justify-content: center;
+}
+
+@media screen and (max-width:500px) {
+    .make_center_header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .header_container,
@@ -130,24 +157,32 @@ nav>img {
 }
 
 .dropdown_content {
-    display: flex;
-    flex-direction: row;
-    height: fit-content;
-    width: fit-content;
     display: none;
-    /* border: 1px solid #cccccc8f; */
+    flex-direction: row;
     position: absolute;
     left: 17em;
     top: 4em;
     padding: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
 
+.dropdown_content>div {
+    display: inline-flex;
+}
+
+.dropdown_content>div>a {
+    font-size: 18px;
+    text-decoration: none;
+    padding: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .make_vertical {
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
 }
 
 /*
@@ -169,7 +204,7 @@ hr {
     color: white;
     padding: 5px 0;
     position: relative;
-    top: 6rem;
+    top: 6.15rem;
     text-align: center;
 }
 
