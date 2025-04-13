@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitsu.moe</title>
+    <link rel="stylesheet" href="/CSS/info-style.css">
+</head>
+
+<body style="background-image: url('/Media/36VunHd.jpeg');">
+    <header class="header_container glass_pane">
+        <div class="make_center top_bar">
+            <nav class="make_center">
+                <img src="/Media/kitsune-icon-20-removebg-preview.png" alt="Kitsu Icon">
+                <ul class="make_center_header">
+                    <li>Kitsu</li>
+                    <li>Home</li>
+                    <li onclick="toggleDropdown()">Genres</li>
+                    <li>Catalogue</li>
+                </ul>
+            </nav>
+            <div id="login_area">
+                <a target="_blank" href="/HTML/login.html">
+                    <div id="login_link" class="login_button">Login</div>
+                </a>
+            </div>
+            <!-- 
+                        
+            when logged in, replace with this:
+                                        
+            <div id="image_to_replace" class="user_icon"><img src="/Media/login_default.png" alt="default login" style="height: 45px;"></div>
+                        
+            -->
+        </div>
+    </header>
+
+    <!-- inside the onclick functions curved brackets, add the api genres for filtering
+                the display_genres function does not currently exist but what it does it reroute the
+                user to the catalogue page and automatically filter for the clicked genre. 
+        
+                you can add your own IDs if needed
+            -->
+    <div id="menu" class="dropdown_content make_center glass_pane">
+        <div class="make_vertical">
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Action</a>
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Adventure</a>
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Comedy</a>
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Drama</a>
+        </div>
+        <div class="make_vertical">
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Fantasy</a>
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Historical</a>
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Horror</a>
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Mystery</a>
+        </div>
+        <div class="make_vertical">
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Romance</a>
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Sci-Fi</a>
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Shounen</a>
+            <a onclick="display_genre()" href="/HTML/catalogue.html">Supernatural</a>
+        </div>
+    </div>
+
+    <main class="main_container">
+        <section>
+            <div class="make_center">
+                <h1>Gintama</h1> <!-- Change to dynamic based the api-->
+            </div>
+
+            <div class="thumbnail">
+                <img src="/Media/gintama_poster.jpg"> <!-- Change to dynamic based the api-->
+            </div>
+
+            <div>
+                <!-- Change to dynamic based the api-->
+                <h3>Score: 8.93</h3>
+                <div class="make_center">
+                    <img src="/Media/gold_star.png" height="30px">
+                    <img src="/Media/gold_star.png" height="30px">
+                    <img src="/Media/gold_star.png" height="30px">
+                    <img src="/Media/gold_star.png" height="30px">
+                    <img src="/Media/gold_star.png" height="30px">
+                    <img src="/Media/gold_star.png" height="30px">
+                    <img src="/Media/gold_star.png" height="30px">
+                    <img src="/Media/gold_star.png" height="30px">
+                    <img src="/Media/grey_star.png" height="30px">
+                    <img src="/Media/grey_star.png" height="30px">
+                </div>
+            </div>
+
+            <div>
+                <label for="user_rating">User rating:</label>
+                <select name="rating" id="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="watch_status">Watch status:</label>
+                <select name="status" id="status">
+                    <option value="watching">Watching</option>
+                    <option value="plan_to_watch">Plan to watch</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+
+            <div>
+                <h2>Synopsis</h2>
+                <p> <!-- Change to dynamic based the api-->
+                Edo is a city that was home to the vigor and ambition of samurai across the country.
+                However, following feudal Japan's surrender to powerful aliens known as the "Amanto," those aspirations now seem unachievable.
+                With the once-influential shogunate rebuilt as a puppet government, a new law is passed that promptly prohibits all swords in public.
+                Enter Gintoki Sakata, an eccentric silver-haired man who always carries around a wooden sword and maintains his stature as a samurai despite the ban.
+                As the founder of Yorozuya, a small business for odd jobs, Gintoki often embarks on endeavors to help other people—though usually in rather strange and unforeseen ways.
+                Assisted by Shinpachi Shimura, a boy with glasses supposedly learning the way of the samurai; Kagura, a tomboyish girl with superhuman strength and an endless appetite; and Sadaharu, their giant pet dog who loves biting on people's heads, the Yorozuya encounter anything from alien royalty to scuffles with local gangs in the ever-changing world of Edo.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <!-- Change to dynamic based the api-->
+            <div>
+                <div>
+                    <img src="/Media/c_gintoki.jpg">
+                    <p>Character</p>
+                    <p>Voice actor</p>
+                    <img src="/Media/va_gintoki.jpg">
+                </div>
+
+                <div>
+                    <img src="/Media/c_kagura.jpg">
+                    <p>Character</p>
+                    <p>Voice actor</p>
+                    <img src="/Media/va_kagura.jpg">
+                </div>
+
+                <div>
+                    <img src="/Media/c_kotarou.jpg">
+                    <p>Character</p>
+                    <p>Voice actor</p>
+                    <img src="/Media/va_kotarou.jpg">
+                </div>
+
+                <div>
+                    <img src="/Media/c_shinpachi.jpg">
+                    <p>Character</p>
+                    <p>Voice actor</p>
+                    <img src="/Media/va_shinpachi.jpg">
+                </div>
+            </div>
+
+            <div class="pagination_buttons">
+                <button id="prev_page"><img src="/Media/left-arrow.png" alt="previous page"></button>
+                <button id="next_page"><img src="/Media/right-arrow.png" alt="next page"></button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer_container">
+        <div class="make_center bottom_bar">
+            <nav class="make_center upperside">
+                <ul class="make_center">
+                    <li><img class="footer_logo" src="/Media/kitsune-icon-20-removebg-preview.png" alt="Kitsu Icon">
+                    </li>
+                    <li><a target="_blank" href="/HTML/about.html">Kitsu</a></li>
+                    <li><a target="_blank" href="/HTML/about.html">Pricing</a></li>
+                    <li><a target="_blank" href="/HTML/about.html">FAQs</a></li>
+                    <li><a target="_blank" href="/HTML/about.html">Contact Us</a></li>
+                    <li><a target="_blank" href="/HTML/about.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <hr>
+
+        <div class="make_center lowerside">
+            <span>&#169; Clockwork Studios 2025</span>
+            <ul class="make_center">
+                <li><a target="_blank" href="https://github.com"><img class="footer_image" src="/Media/github.png"
+                            alt="GitHub"></a>
+                </li>
+                <li><a target="_blank" href="https://github.com"><img class="footer_image" src="/Media/Instagram.png"
+                            alt="Instagram"></a></li>
+                <li><a target="_blank" href="https://github.com"><img class="footer_image" src="/Media/twitter.svg"
+                            alt="Twitter"></a>
+                </li>
+                <li><a target="_blank" href="https://github.com"><img class="footer_image" src="/Media/youtube.svg"
+                            alt="YouTube"></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="/Javascript/script.js"></script>
+</body>
+
+</html>
