@@ -143,6 +143,47 @@ function resetFilter(){
     getData(page);
 }
 
+// MAYBE this code could fix some of the filtering issues,
+// but takes very long. Apparently Jikan wasn't built to display filtered genres properly so the problem lies with them
+// ignore the code since it's commented out
+
+// function applyFilter(genre) {
+//     activeFilter = genre;
+//     page = 1;
+//     getFilteredData();
+// }
+
+// async function getFilteredData() {
+//     let filtered = [];
+//     let tempPage = 1;
+//     const maxPages = 10; // just to prevent infinite loops
+
+//     while (filtered.length < 25 && tempPage <= maxPages) {
+//         try {
+//             const response = await fetch(`https://api.jikan.moe/v4/anime?page=${tempPage}`);
+
+//             if (!response.ok) {
+//                 console.warn("Rate limit hit, retrying...");
+//                 await new Promise(resolve => setTimeout(resolve, 2000));
+//                 continue;
+//             }
+
+//             const anime = await response.json();
+//             const matches = anime.data.filter(anime =>
+//                 anime.genres.some(g => g.name === activeFilter)
+//             );
+
+//             filtered.push(...matches);
+//             tempPage++;
+//         } catch (error) {
+//             console.error("Error while filtering:", error);
+//             break;
+//         }
+//     }
+
+//     showAll(filtered.slice(0, 25));
+// }
+
 //increments to the next page
 function nextPage(){
     page++;

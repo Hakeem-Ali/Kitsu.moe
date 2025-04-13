@@ -81,7 +81,7 @@ nav>ul>li:hover {
 .login_button:hover {
     border: 1px solid white;
     background: #0030538e;
-    
+
 }
 
 * {
@@ -134,7 +134,7 @@ video {
     width: 100%;
 }
 
-nav>img {
+nav>a>img {
     height: 5em;
 }
 

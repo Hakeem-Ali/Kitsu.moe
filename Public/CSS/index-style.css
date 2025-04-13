@@ -133,7 +133,7 @@ video {
     width: 100%;
 }
 
-nav>img {
+nav>a>img {
     height: 5em;
 }
 
