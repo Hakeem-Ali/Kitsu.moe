@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kitsu.moe</title>
     <link rel="stylesheet" href="../CSS/login-style.css">
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+
+    <script src="../firebaseConfig.js"></script>
 </head>
 
-<body style="background-image: url('Media/wp5118182-ps4-4k-anime-wallpapers.jpg');">
+<body style="background-image: url('../Media/wp5118182-ps4-4k-anime-wallpapers.jpg');">
     <header class="header_container glass_pane">
         <div class="make_center top_bar">
             <nav class="make_center">
@@ -79,11 +84,11 @@
             password: bobpass
         -->
             <form id="login_form" class="make_vertical glass_pane_2 make_center login_container">
-                <label for="text">Enter Username</label>
-                <input type="text" placeholder="Username" required>
+                <label for="email">Enter Email</label>
+                <input type="email" id="email" placeholder="Email" required>
 
-                <label for="text">Enter Password</label>
-                <input type="password" placeholder="Password" required>
+                <label for="password">Enter Password</label>
+                <input type="password" id="password" placeholder="Password" required>
                 <button type="submit">Login</button>
             </form>
         </section>
