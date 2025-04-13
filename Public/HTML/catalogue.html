@@ -118,24 +118,12 @@
 
             <!-- the anchor and everything inside is what you are going 
              to be putting inside the javascript render function -->
-            <div class="extra_spacing_for_cards">
-                <a onclick="open_info_page()" target="_blank" href="info.html">
-                    <div class="card">
-                        <img src="../Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
-                        <div class="card_container glass_pane">
-                            <h4><b>Gintama</b></h4>
-                            <p>Score: 8.93</p>
-                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
         </section>
 
 
         <div class="pagination_buttons">
-            <button id="prev_page"><img src="../Media/left-arrow.png" alt="previous page"></button>
-            <button id="next_page"><img src="../Media/right-arrow.png" alt="next page"></button>
+            <button id="prev_page" onclick="prevPage()"><img src="../Media/left-arrow.png" alt="previous page"></button>
+            <button id="next_page" onclick="nextPage()"><img src="../Media/right-arrow.png" alt="next page"></button>
         </div>
 
     </main>
