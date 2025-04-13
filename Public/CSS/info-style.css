@@ -1,0 +1,642 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    /* color: #FFFFBB; */
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.glass_pane {
+    /* From https://css.glass */
+    background: rgba(70, 57, 57, 0.34);
+    border-radius: 2%;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.1px);
+    -webkit-backdrop-filter: blur(10.1px);
+    border: 1px solid rgba(70, 57, 57, 0.45);
+}
+
+
+/*
+Header
+*/
+.user_icon {
+    position: relative;
+    left: 70em;
+}
+
+.login_button {
+    font-size: 18px;
+    position: relative;
+    left: 60em;
+    /* Consider using flexbox */
+    display: inline-block;
+    padding: 0.5em 1.2em;
+    border: 1px solid rgba(255, 255, 255, 0.676);
+    border-radius: 200px;
+    background-color: rgba(70, 57, 57, 0.396);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav>ul {
+    height: 80px;
+}
+
+nav>ul>li {
+    list-style-type: none;
+    display: inline-flex;
+    padding: 10px 30px;
+    font-size: 18px;
+    height: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.15s ease, transform 0.1s ease;
+    transition: font-size 0.3s ease, transform 0.2s ease;
+}
+
+nav>ul>li:hover {
+    background: rgba(46, 38, 38, 0.34);
+    font-size: 20px;
+    /* transform: scale(1.05); */
+}
+
+.dropdown_content>div>a {
+    transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.dropdown_content>div>a:hover {
+    background: rgba(46, 38, 38, 0.34);
+}
+
+.login_button:hover {
+    border: 1px solid white;
+    background: #0030538e;
+
+}
+
+* {
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+body {
+    background-color: #2A2B2E;
+    margin: 0;
+}
+
+img,
+picture,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+* {
+    margin: 0;
+}
+
+img,
+picture,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+.make_center {
+    display: flex;
+    /*could be changed */
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width:500px) {
+    .make_center_header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.header_container,
+.footer_container {
+    width: 100%;
+}
+
+nav>img {
+    height: 5em;
+}
+
+.top_bar {
+    position: relative;
+    right: 35em;
+}
+
+.dropdown_content>div {
+    display: inline-flex;
+}
+
+.dropdown_content>div>a {
+    font-size: 18px;
+    text-decoration: none;
+    padding: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown_content {
+    display: none;
+    flex-direction: row;
+    position: absolute;
+    left: 17em;
+    top: 4em;
+    padding: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown_content>div {
+    display: inline-flex;
+}
+
+.dropdown_content>div>a {
+    font-size: 18px;
+    text-decoration: none;
+    padding: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.make_vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*
+Footer
+*/
+
+hr {
+    width: 70%;
+    margin-left: 15%;
+}
+
+.footer_container>div {
+    width: 100%;
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer_image {
+    height: 35px;
+}
+
+.footer_logo {
+    height: 5em;
+}
+
+.footer_container {
+    width: 100%;
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+    position: relative;
+}
+
+.bottom_bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.upperside>ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    /* Adjust max width as needed */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.upperside li {
+    margin: 0 2.5em;
+    text-align: center;
+}
+
+.footer_logo {
+    height: 40px;
+}
+
+.lowerside {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 0 20px;
+}
+
+.lowerside ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lowerside li {
+    margin-left: 15px;
+    /* Adds spacing between icons */
+}
+
+.footer_image {
+    height: 30px;
+    width: auto;
+    margin-left: 3em;
+}
+
+@media screen and (max-width: 1000px) {
+    footer {
+        position: relative;
+        top: 20em;
+        height: fit-content;
+    }
+
+    .upperside>ul {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .lowerside>ul {
+        width: 100%;
+        max-width: 100%;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .lowerside>ul>li {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer_image {
+        height: 25px;
+        width: auto;
+    }
+
+
+}
+
+
+/*
+Main
+*/
+
+main {
+    margin: 0 auto;
+    width: 70%;
+    min-height: 660px;
+    height: fit-content;
+}
+
+.main_container {
+    position: relative;
+    top: 15em;
+    text-align: center;
+}
+
+.display_section {
+    margin: 1em 0;
+    width: 100%;
+    height: 400px;
+}
+
+.display_bar button {
+    background-color: rgba(35, 36, 38, 0.327);
+    width: 400px;
+    height: 40px;
+    border-radius: 50px;
+    padding-left: 1em;
+    color: black;
+    font-size: 1em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.display_bar {
+    position: relative;
+    top: 1em;
+    left: 1em;
+}
+
+.display_bar img {
+    height: 30px;
+    position: relative;
+    top: 8px;
+    right: 45px;
+}
+
+@media screen and (min-width: 1300px) {
+    .extra_spacing_for_cards {
+        height: 700px;
+        margin: 3em 0;
+    }
+}
+
+.extra_spacing_for_cards {
+    margin: 0em 2em;
+}
+
+.card_content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 0;
+}
+
+.card {
+    border: 1px rgba(84, 74, 74, 0.728) solid;
+    border-radius: 5px;
+    width: 250px;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(111, 109, 163, 0.3);
+}
+
+.card img {
+    border-radius: 5px 5px 0 0;
+    height: 300px;
+    width: 100px;
+    object-fit: cover;
+}
+
+.card_container h4,
+.card_container p {
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+.hero {
+    text-align: center;
+    position: relative;
+    top: -4em;
+}
+
+.hero>div>h1 {
+    position: relative;
+    top: -1em;
+}
+
+.hero>div>p {
+    position: relative;
+    top: -3em;
+}
+
+.hero h1 {
+    font-size: 60px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    font-size: 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 1em 2em;
+    background-color: rgba(110, 37, 37, 0.78);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hero button:hover {
+    background-color: rgba(154, 40, 40, 0.828);
+}
+
+html {
+    font-size: 16px;
+    background-color: #2A2B2E;
+}
+
+/*
+Responsiveness
+*/
+
+@media screen and (max-width: 1200px) {
+
+    .hero>div>h1 {
+        position: relative;
+        top: -1em;
+    }
+
+    .hero>div>p {
+        position: relative;
+        top: -1em;
+    }
+
+    .login_button,
+    .user_icon {
+        left: 40em;
+    }
+
+    .top_bar {
+        right: 20em;
+    }
+
+    .card {
+        margin-left: 2em;
+    }
+
+    .card_content {
+        gap: 5%;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    nav>ul {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav>ul>li {
+        padding: 8px 20px;
+        font-size: 16px;
+    }
+
+    .login_button {
+        left: 0;
+        margin-top: 10px;
+        position: static;
+        display: block;
+        text-align: center;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .user_icon {
+        left: 0;
+        position: static;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .top_bar {
+        right: 0;
+        text-align: center;
+    }
+
+    .hero>div>h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .hero>div>p {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .hero>div>button {
+        position: relative;
+        top: 1em;
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .card {
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .footer_container {
+        text-align: center;
+    }
+
+    .lowerside {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lowerside ul {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .lowerside li {
+        margin: 5px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card_content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .footer_logo {
+        height: 30px;
+    }
+
+    .upperside>ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .dropdown_content {
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .dropdown_content>div {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero>div>h1 {
+        font-size: 30px;
+    }
+
+    .hero>div>p {
+        font-size: 16px;
+    }
+
+    .hero>div>button {
+        font-size: 18px;
+    }
+
+    .login_button {
+        font-size: 16px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .footer_container {
+        padding: 15px 0;
+    }
+
+    .footer_container>div {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .lowerside {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+/*
+Info page
+*/
+
