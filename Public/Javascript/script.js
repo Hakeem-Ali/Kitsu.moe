@@ -158,3 +158,9 @@ function prevPage(){
 }
 
 getData(page);
+
+//Info Script for Ryan (delete the for ryan part)
+function open_info_page(rec){ //starting function; there is a function called isUserLoggedIn(dont rlly remember name) under the catalogue;
+                              //use that function to check if the user is logged in when writing the user generated contect. delete this when read;
+
+}
