@@ -5,19 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kitsu.moe</title>
-    <link rel="stylesheet" href="/CSS/info-style.css">
+    <link rel="stylesheet" href="../CSS/info-style.css">
 </head>
 
-<body style="background-image: url('/Media/36VunHd.jpeg');">
+<body style="background-image: url('../Media/36VunHd.jpeg');">
     <header class="header_container glass_pane">
         <div class="make_center top_bar">
             <nav class="make_center">
-                <img src="/Media/kitsune-icon-20-removebg-preview.png" alt="Kitsu Icon">
+                <a href="../index.html"><img src="../Media/kitsune-icon-20-removebg-preview.png" alt="Kitsu Icon"></a>
                 <ul class="make_center_header">
-                    <li>Kitsu</li>
-                    <li>Home</li>
+                    <li><a href="../index.html">Kitsu</a></li>
+                    <li><a href="../index.html">Home</a></li>
                     <li onclick="toggleDropdown()">Genres</li>
-                    <li>Catalogue</li>
+                    <li><a href="catalogue.html">Catalogue</a></li>
                 </ul>
             </nav>
             <div id="login_area">
@@ -43,134 +43,230 @@
             -->
     <div id="menu" class="dropdown_content make_center glass_pane">
         <div class="make_vertical">
-            <a onclick="display_genre()" href="/HTML/catalogue.html">Action</a>
-            <a onclick="display_genre()" href="/HTML/catalogue.html">Adventure</a>
-            <a onclick="display_genre()" href="/HTML/catalogue.html">Comedy</a>
-            <a onclick="display_genre()" href="/HTML/catalogue.html">Drama</a>
+            <a onclick="applyFilter('Action')" href="catalogue.html">Action</a>
+            <a onclick="applyFilter('Adventure')" href="catalogue.html">Adventure</a>
+            <a onclick="applyFilter('Comedy')" href="catalogue.html">Comedy</a>
+            <a onclick="applyFilter('Drama')" href="catalogue.html">Drama</a>
         </div>
         <div class="make_vertical">
-            <a onclick="display_genre()" href="/HTML/catalogue.html">Fantasy</a>
-            <a onclick="display_genre()" href="/HTML/catalogue.html">Historical</a>
-            <a onclick="display_genre()" href="/HTML/catalogue.html">Horror</a>
-            <a onclick="display_genre()" href="/HTML/catalogue.html">Mystery</a>
+            <a onclick="applyFilter('Fantasy')" href="catalogue.html">Fantasy</a>
+            <a onclick="applyFilter('Historical')" href="catalogue.html">Historical</a>
+            <a onclick="applyFilter('Horror')" href="catalogue.html">Horror</a>
+            <a onclick="applyFilter('Mystery')" href="catalogue.html">Mystery</a>
         </div>
         <div class="make_vertical">
-            <a onclick="display_genre()" href="/HTML/catalogue.html">Romance</a>
-            <a onclick="display_genre()" href="/HTML/catalogue.html">Sci-Fi</a>
-            <a onclick="display_genre()" href="/HTML/catalogue.html">Shounen</a>
-            <a onclick="display_genre()" href="/HTML/catalogue.html">Supernatural</a>
+            <a onclick="applyFilter('Romance')" href="catalogue.html">Romance</a>
+            <a onclick="applyFilter('Sci-Fi')" href="catalogue.html">Sci-Fi</a>
+            <a onclick="applyFilter('Shounen')" href="catalogue.html">Shounen</a>
+            <a onclick="applyFilter('Supernatural')" href="catalogue.html">Supernatural</a>
         </div>
     </div>
 
     <main class="main_container">
         <section>
-            <div class="make_center">
+
+            <div class="hero">
                 <h1>Gintama</h1> <!-- Change to dynamic based the api-->
             </div>
 
-            <div class="thumbnail">
-                <img src="/Media/gintama_poster.jpg"> <!-- Change to dynamic based the api-->
+        </section>
+
+        <section class="highlight align_section_info">
+            <div class="highlight left">
+                <div id="poster_image" class="thumbnail">
+                    <img src="../Media/gintama_poster.jpg"> <!-- Change to dynamic based the api-->
+                </div>
             </div>
 
-            <div>
+            <div class="highlight right">
+
                 <!-- Change to dynamic based the api-->
-                <h3>Score: 8.93</h3>
-                <div class="make_center">
-                    <img src="/Media/gold_star.png" height="30px">
-                    <img src="/Media/gold_star.png" height="30px">
-                    <img src="/Media/gold_star.png" height="30px">
-                    <img src="/Media/gold_star.png" height="30px">
-                    <img src="/Media/gold_star.png" height="30px">
-                    <img src="/Media/gold_star.png" height="30px">
-                    <img src="/Media/gold_star.png" height="30px">
-                    <img src="/Media/gold_star.png" height="30px">
-                    <img src="/Media/grey_star.png" height="30px">
-                    <img src="/Media/grey_star.png" height="30px">
+                <div class="highlight">
+                    <h3>Score: 8.93</h3>
+                </div>
+
+                <div>
+                    <div id="stars" class="highlight make_center">
+                        <div id="gold_star">
+                            <img src="../Media/gold_star.png">
+                        </div>
+                        <div id="gold_star">
+                            <img src="../Media/gold_star.png">
+                        </div>
+                        <div id="gold_star">
+                            <img src="../Media/gold_star.png">
+                        </div>
+                        <div id="gold_star">
+                            <img src="../Media/gold_star.png">
+                        </div>
+                        <div id="gold_star">
+                            <img src="../Media/gold_star.png">
+                        </div>
+                        <div id="gold_star">
+                            <img src="../Media/gold_star.png">
+                        </div>
+                        <div id="gold_star">
+                            <img src="../Media/gold_star.png">
+                        </div>
+                        <div id="gold_star">
+                            <img src="../Media/gold_star.png">
+                        </div>
+                        <div id="white_star">
+                            <img src="../Media/white_star.png">
+                        </div>
+                        <div id="white_star">
+                            <img src="../Media/white_star.png">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <label class="black_text" for="user_rating">User rating:</label>
+                    <select name="rating" id="rating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+
+                <div class="highlight ">
+                    <label class="black_text" for="watch_status">Watch status:</label>
+                    <!-- Make it so that when clicking the respective option, 
+                     the icon that is displayed is the proper color
+                     
+                    the next comment contains the html 
+                    and the three onclick functions have NOT been made yet
+
+                    for eg:
+                    clicking watching would activate "display_green_icon()" function which places
+
+                    <img src="../Media/green_watching.png" alt="">
+
+                    inside the span. The same thing occurs when a different option is selected but for the
+                    respective color
+                    -->
+                    <span class="highlight" id="watch_status_icon">
+                        <img src="../Media/green_watching.png" alt="">
+                        <!-- 
+                        <img src="../Media/grey_plan_to_watch.png" alt="">
+                        <img src="../Media/blue_completed.png" alt=""> 
+                        -->
+                    </span>
+
+                    <select name="status" id="status">
+                        <option onclick="display_green_icon()" value="watching">Watching</option>
+                        <option onclick="display_grey_icon()" value="plan_to_watch">Plan to watch</option>
+                        <option onclick="display_blue_icon()" value="completed">Completed</option>
+                    </select>
+                </div>
+
+                <!-- Change to dynamic based the api-->
+                <div class="highlight">
+                    <h2>Synopsis</h2>
+                </div>
+
+                <div class="highlight">
+                    <!-- Change to dynamic based the api-->
+                    <p class="highlight">
+                        Edo is a city that was home to the vigor and ambition of samurai across the country.
+                        However, following feudal Japan's surrender to powerful aliens known as the "Amanto," those
+                        aspirations now seem unachievable.
+                        With the once-influential shogunate rebuilt as a puppet government, a new law is passed that
+                        promptly prohibits all swords in public.
+                        Enter Gintoki Sakata, an eccentric silver-haired man who always carries around a wooden
+                        sword
+                        and
+                        maintains his stature as a samurai despite the ban.
+                        As the founder of Yorozuya, a small business for odd jobs, Gintoki often embarks on
+                        endeavors to
+                        help other people—though usually in rather strange and unforeseen ways.
+                        Assisted by Shinpachi Shimura, a boy with glasses supposedly learning the way of the
+                        samurai;
+                        Kagura, a tomboyish girl with superhuman strength and an endless appetite; and Sadaharu,
+                        their
+                        giant
+                        pet dog who loves biting on people's heads, the Yorozuya encounter anything from alien
+                        royalty
+                        to
+                        scuffles with local gangs in the ever-changing world of Edo.
+                    </p>
                 </div>
             </div>
 
-            <div>
-                <label for="user_rating">User rating:</label>
-                <select name="rating" id="rating">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>
-            </div>
-
-            <div>
-                <label for="watch_status">Watch status:</label>
-                <select name="status" id="status">
-                    <option value="watching">Watching</option>
-                    <option value="plan_to_watch">Plan to watch</option>
-                    <option value="completed">Completed</option>
-                </select>
-            </div>
-
-            <div>
-                <h2>Synopsis</h2>
-                <p> <!-- Change to dynamic based the api-->
-                Edo is a city that was home to the vigor and ambition of samurai across the country.
-                However, following feudal Japan's surrender to powerful aliens known as the "Amanto," those aspirations now seem unachievable.
-                With the once-influential shogunate rebuilt as a puppet government, a new law is passed that promptly prohibits all swords in public.
-                Enter Gintoki Sakata, an eccentric silver-haired man who always carries around a wooden sword and maintains his stature as a samurai despite the ban.
-                As the founder of Yorozuya, a small business for odd jobs, Gintoki often embarks on endeavors to help other people—though usually in rather strange and unforeseen ways.
-                Assisted by Shinpachi Shimura, a boy with glasses supposedly learning the way of the samurai; Kagura, a tomboyish girl with superhuman strength and an endless appetite; and Sadaharu, their giant pet dog who loves biting on people's heads, the Yorozuya encounter anything from alien royalty to scuffles with local gangs in the ever-changing world of Edo.
-                </p>
-            </div>
         </section>
 
-        <section>
-            <!-- Change to dynamic based the api-->
-            <div>
-                <div>
-                    <img src="/Media/c_gintoki.jpg">
-                    <p>Character</p>
-                    <p>Voice actor</p>
-                    <img src="/Media/va_gintoki.jpg">
-                </div>
 
-                <div>
-                    <img src="/Media/c_kagura.jpg">
-                    <p>Character</p>
-                    <p>Voice actor</p>
-                    <img src="/Media/va_kagura.jpg">
-                </div>
-
-                <div>
-                    <img src="/Media/c_kotarou.jpg">
-                    <p>Character</p>
-                    <p>Voice actor</p>
-                    <img src="/Media/va_kotarou.jpg">
-                </div>
-
-                <div>
-                    <img src="/Media/c_shinpachi.jpg">
-                    <p>Character</p>
-                    <p>Voice actor</p>
-                    <img src="/Media/va_shinpachi.jpg">
+        <section class="make_center card_content">
+            <!-- Change to dynamic based the api
+             
+            Also, have such that "Character" and "Voice actor"
+            are replaced with their actual names
+            -->
+            <div class="extra_spacing_for_cards">
+                <div class="card">
+                    <div class="card_container glass_pane">
+                        <img src="../Media/c_gintoki.jpg">
+                        <p class="upper_card_name">Character</p>
+                        <p class="lower_card_name">Voice actor</p>
+                        <img src="../Media/va_gintoki.jpg">
+                    </div>
                 </div>
             </div>
 
-            <div class="pagination_buttons">
-                <button id="prev_page"><img src="/Media/left-arrow.png" alt="previous page"></button>
-                <button id="next_page"><img src="/Media/right-arrow.png" alt="next page"></button>
+            <div class="extra_spacing_for_cards">
+                <div class="card">
+                    <div class="card_container glass_pane">
+                        <img src="../Media/c_kagura.jpg">
+                        <p class="upper_card_name">Character</p>
+                        <p class="lower_card_name">Voice actor</p>
+                        <img src="../Media/va_kagura.jpg">
+                    </div>
+                </div>
             </div>
+
+            <div class="extra_spacing_for_cards">
+                <div class="card">
+                    <div class="card_container glass_pane">
+                        <img src="../Media/c_shinpachi.jpg">
+                        <p class="upper_card_name">Character</p>
+                        <p class="lower_card_name">Voice actor</p>
+                        <img src="../Media/va_shinpachi.jpg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="extra_spacing_for_cards">
+                <div class="card">
+                    <div class="card_container glass_pane">
+                        <img src="../Media/c_kotarou.jpg">
+                        <p class="upper_card_name">Character</p>
+                        <p class="lower_card_name">Voice actor</p>
+                        <img src="../Media/va_kotarou.jpg">
+                    </div>
+                </div>
+            </div>
+
         </section>
+
+        <div class="pagination_buttons">
+            <button id="prev_page"><img src="../Media/left-arrow.png" alt="previous page"></button>
+            <button id="next_page"><img src="../Media/right-arrow.png" alt="next page"></button>
+        </div>
+
     </main>
 
     <footer class="footer_container">
         <div class="make_center bottom_bar">
             <nav class="make_center upperside">
                 <ul class="make_center">
-                    <li><img class="footer_logo" src="/Media/kitsune-icon-20-removebg-preview.png" alt="Kitsu Icon">
+                    <li><img class="footer_logo" src="../Media/kitsune-icon-20-removebg-preview.png" alt="Kitsu Icon">
                     </li>
                     <li><a target="_blank" href="/HTML/about.html">Kitsu</a></li>
                     <li><a target="_blank" href="/HTML/about.html">Pricing</a></li>
@@ -186,22 +282,22 @@
         <div class="make_center lowerside">
             <span>&#169; Clockwork Studios 2025</span>
             <ul class="make_center">
-                <li><a target="_blank" href="https://github.com"><img class="footer_image" src="/Media/github.png"
+                <li><a target="_blank" href="https://github.com"><img class="footer_image" src="../Media/github.png"
                             alt="GitHub"></a>
                 </li>
-                <li><a target="_blank" href="https://github.com"><img class="footer_image" src="/Media/Instagram.png"
+                <li><a target="_blank" href="https://github.com"><img class="footer_image" src="../Media/Instagram.png"
                             alt="Instagram"></a></li>
-                <li><a target="_blank" href="https://github.com"><img class="footer_image" src="/Media/twitter.svg"
+                <li><a target="_blank" href="https://github.com"><img class="footer_image" src="../Media/twitter.svg"
                             alt="Twitter"></a>
                 </li>
-                <li><a target="_blank" href="https://github.com"><img class="footer_image" src="/Media/youtube.svg"
+                <li><a target="_blank" href="https://github.com"><img class="footer_image" src="../Media/youtube.svg"
                             alt="YouTube"></a>
                 </li>
             </ul>
         </div>
     </footer>
 
-    <script src="/Javascript/script.js"></script>
+    <script src="../Javascript/script.js"></script>
 </body>
 
 </html>
