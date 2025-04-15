@@ -14,6 +14,13 @@ function toggleDropdown() {
         });
 
 //Login script
+
+//Check if user is logged in (boolean)
+const isUserLoggedIn = () => {
+    const user = firebase.auth().currentUser;
+    return user !== null;
+};
+
 document.addEventListener("DOMContentLoaded", function () {
 
     //Firebase login function
@@ -27,12 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Signup error:", error.message);
         alert("Signup failed: " + error.message);
     });
-    };
-
-    //Check if user is logged in (boolean)
-    const isUserLoggedIn = () => {
-        const user = firebase.auth().currentUser;
-        return user !== null;
     };
 
     //Attach to login form
@@ -282,29 +283,81 @@ function displayBlueIcon() {
 
 // Function to update the icon based on dropdown selection
 function updateWatchStatusIcon() {
-    const status = document.getElementById('status').value; // Get the selected status
+    const user = firebase.auth().currentUser;
+    if (!user) {
+        console.log("Blocked icon update: User not logged in");
+        return;
+    }
+
+    const status = document.getElementById('status').value;
     switch (status) {
         case 'watching':
-            displayGreenIcon(); // Display the "Watching" icon
+            displayGreenIcon();
             break;
         case 'plan_to_watch':
-            displayGreyIcon(); // Display the "Plan to Watch" icon
+            displayGreyIcon();
             break;
         case 'completed':
-            displayBlueIcon(); // Display the "Completed" icon
+            displayBlueIcon();
             break;
         default:
-            displayGreyIcon(); // Default to "Plan to Watch" icon
+            displayGreyIcon();
             break;
     }
 }
 
-// Add event listener to dropdown to trigger icon update
-document.getElementById('status').addEventListener('change', updateWatchStatusIcon);
+// Only update icon if user is logged in
+document.getElementById('status')?.addEventListener('change', function(event) {
+    if (!isUserLoggedIn()) {
+        alert("Please log in to update watch status.");
+        this.value = ''; // reset selection
+        return;
+    }
+    updateWatchStatusIcon();
+});
 
-// Initial call to set the correct status icon when the page loads (if needed)
-window.onload = function() {
-    updateWatchStatusIcon(); // Ensures the correct icon is displayed when the page loads
-};
+//Final login check on page load
+firebase.auth().onAuthStateChanged(function(user) {
+    const statusDropdown = document.getElementById('status');
+    const icon = document.getElementById('watch_status_icon');
+    const stars = document.querySelectorAll('.star img');
+
+
+    if (user) {
+        console.log("User is logged in");
+
+        if (statusDropdown) {
+            statusDropdown.disabled = false;
+            statusDropdown.title = '';
+        }
+
+        updateWatchStatusIcon(); // Show correct icon
+
+        // Enable rating (if interactive)
+        stars.forEach(star => {
+            star.style.pointerEvents = 'auto';
+            star.title = '';
+        });
+
+    } else {
+        console.log("User is not logged in");
+
+        if (statusDropdown) {
+            statusDropdown.disabled = true;
+            statusDropdown.value = '';
+            statusDropdown.title = "Login required to update watch status.";
+        }
+
+        if (icon) {
+            icon.innerHTML = '<p style="color: gray;">Login to update status</p>';
+        }
+
+        // Disable rating interaction
+        stars.forEach(star => {
+            star.style.pointerEvents = 'none';
+            star.title = "Login required to rate.";
+        });
+    }
+});
 
 getData(page);
