@@ -13,11 +13,10 @@ function toggleDropdown() {
             }
         });
 
-//login script
-
+//Login script
 document.addEventListener("DOMContentLoaded", function () {
 
-    // 🛂 Firebase login function
+    //Firebase login function
     const signIn = (email, password) => {
         firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
@@ -30,13 +29,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     };
 
-    // 🧠 Check if user is logged in (boolean)
+    //Check if user is logged in (boolean)
     const isUserLoggedIn = () => {
         const user = firebase.auth().currentUser;
         return user !== null;
     };
 
-    // 💬 Attach to login form
+    //Attach to login form
     const loginForm = document.getElementById('login_form');
     if (loginForm) {
         loginForm.addEventListener('submit', function (event) {
@@ -57,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-//Catalogue 
+//Catalogue Script
 let page = 1;
 let state = [];
 activeFilter = null;

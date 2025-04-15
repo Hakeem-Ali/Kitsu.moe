@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // 🧠 Check if user is logged in (boolean)
+    // Check if user is logged in (boolean)
     const isUserLoggedIn = () => {
         const user = firebase.auth().currentUser;
         return user !== null;
