@@ -38,23 +38,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 stars.appendChild(star);
             }
 
-            // Populate character cards dynamically
-            const characterCards = document.getElementById('character_cards');
-            rec.characters.forEach(character => {
-                const card = document.createElement('div');
-                card.classList.add('extra_spacing_for_cards');
-                card.innerHTML = `
-                    <div class="card">
-                        <div class="card_container glass_pane">
-                            <img src="${character.character_image}" alt="${character.character_name}">
-                            <p class="upper_card_name">${character.character_name}</p>
-                            <p class="lower_card_name">${character.voice_actor}</p>
-                            <img src="${character.voice_actor_image}" alt="${character.voice_actor}">
-                        </div>
-                    </div>
-                `;
-                characterCards.appendChild(card);
-            });
 
             // Check if the user is logged in
             const isLoggedIn = isUserLoggedIn();
