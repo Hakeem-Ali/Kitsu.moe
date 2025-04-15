@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // 🧠 Check if user is logged in (boolean)
+    const isUserLoggedIn = () => {
+        const user = firebase.auth().currentUser;
+        return user !== null;
+    };
+
     // Get the current URL
     const url = window.location.href;
 
@@ -49,6 +55,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 `;
                 characterCards.appendChild(card);
             });
+
+            // Check if the user is logged in
+            const isLoggedIn = isUserLoggedIn();
+
+            // If the user is logged in, show rating and watch status
+            if (isLoggedIn) {
+                // Show rating and watch status
+                document.getElementById('user_rating_section').style.display = 'block';
+                document.getElementById('watch_status_section').style.display = 'block';
+            } else {
+                // Hide rating and watch status
+                document.getElementById('user_rating_section').style.display = 'none';
+                document.getElementById('watch_status_section').style.display = 'none';
+            }
 
 
         } else {
