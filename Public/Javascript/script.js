@@ -212,13 +212,19 @@ function prevPage(){
     }
 }
 
-
-
-
+getData(page);
 
 //info script
 
 document.addEventListener('DOMContentLoaded', function () {
+    const statusDropdown = document.getElementById('status');
+    const icon = document.getElementById('watch_status_icon');
+
+    if(statusDropdown){
+        statusDropdown.disabled = true;
+        statusDropdown.title = "Checking login status...";
+    }
+
     // Get the current URL
     const url = window.location.href;
 
@@ -306,20 +312,8 @@ function updateWatchStatusIcon() {
     }
 }
 
-// Only update icon if user is logged in
-document.getElementById('status')?.addEventListener('change', function(event) {
-    if (!isUserLoggedIn()) {
-        alert("Please log in to update watch status.");
-        this.value = ''; // reset selection
-        return;
-    }
-    updateWatchStatusIcon();
-});
-
 //Final login check on page load
 firebase.auth().onAuthStateChanged(function(user) {
-    const statusDropdown = document.getElementById('status');
-    const icon = document.getElementById('watch_status_icon');
     const stars = document.querySelectorAll('.star img');
 
 
@@ -329,6 +323,10 @@ firebase.auth().onAuthStateChanged(function(user) {
         if (statusDropdown) {
             statusDropdown.disabled = false;
             statusDropdown.title = '';
+
+            statusDropdown.addEventListener('change', function(){
+                updateWatchStatusIcon();
+            });
         }
 
         updateWatchStatusIcon(); // Show correct icon
@@ -359,5 +357,3 @@ firebase.auth().onAuthStateChanged(function(user) {
         });
     }
 });
-
-getData(page);
