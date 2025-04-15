@@ -110,9 +110,12 @@ function showAll(records){
             genres += '...';
         }
 
+        // Store the rec object in localStorage with the key 'anime_rec_<mal_id>'
+        localStorage.setItem(`anime_rec_${rec.mal_id}`, JSON.stringify(rec));
+
         html+=`
             <div class="extra_spacing_for_cards">
-                <a onclick="open_info_page(${rec})" target="_blank" href="info.html">
+                <a href="info.html?${rec.mal_id}" class="anime-link">
                     <div class="card">
                         <img src="${rec.images.webp.image_url}" alt="Avatar" style="width:100%">
                         <div class="card_container glass_pane">
@@ -127,6 +130,17 @@ function showAll(records){
     }
 
     result.innerHTML = html;
+
+    // Add click event listener to all links (anchor tags)
+    const links = document.querySelectorAll('.anime-link');
+    links.forEach(link => {
+        link.addEventListener('click', function(event) {
+            const url = new URL(link.href); // Get the URL of the clicked link
+            const id = url.searchParams.get('mal_id'); // Get the value of 'mal_id' from the query string
+
+            console.log("ID from URL:", id); // Logs the ID to the console
+        });
+    });
 }
 
 //applies the filter if selected
