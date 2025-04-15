@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // Log the full rec object
             console.log("Full rec object:", rec); 
 
-// Populate the title, score, synopsis, and other info dynamically
-document.getElementById('anime_title').textContent = rec.title;
+            // Populate the title, score, synopsis, and other info dynamically
+            document.getElementById('anime_title').textContent = rec.title;
             document.getElementById('anime_score').textContent = `Score: ${rec.score}`;
             document.getElementById('anime_synopsis').textContent = rec.synopsis;
             document.getElementById('poster_image').innerHTML = `<img src="${rec.images.webp.image_url}" alt="${rec.title} Poster">`;
@@ -58,3 +58,51 @@ document.getElementById('anime_title').textContent = rec.title;
         console.log("No mal_id in URL.");
     }
 });
+
+// Function to display the "Watching" icon
+function displayGreenIcon() {
+    let result = document.querySelector('#watch_status_icon');
+    let html = '<img src="../Media/green_watching.png" alt="Watching">';
+    result.innerHTML = html; // Update the icon
+}
+
+// Function to display the "Plan to Watch" icon
+function displayGreyIcon() {
+    let result = document.querySelector('#watch_status_icon');
+    let html = '<img src="../Media/grey_plan_to_watch.png" alt="Plan to Watch">';
+    result.innerHTML = html; // Update the icon
+}
+
+// Function to display the "Completed" icon
+function displayBlueIcon() {
+    let result = document.querySelector('#watch_status_icon');
+    let html = '<img src="../Media/blue_completed.png" alt="Completed">';
+    result.innerHTML = html; // Update the icon
+}
+
+// Function to update the icon based on dropdown selection
+function updateWatchStatusIcon() {
+    const status = document.getElementById('status').value; // Get the selected status
+    switch (status) {
+        case 'watching':
+            displayGreenIcon(); // Display the "Watching" icon
+            break;
+        case 'plan_to_watch':
+            displayGreyIcon(); // Display the "Plan to Watch" icon
+            break;
+        case 'completed':
+            displayBlueIcon(); // Display the "Completed" icon
+            break;
+        default:
+            displayGreyIcon(); // Default to "Plan to Watch" icon
+            break;
+    }
+}
+
+// Add event listener to dropdown to trigger icon update
+document.getElementById('status').addEventListener('change', updateWatchStatusIcon);
+
+// Initial call to set the correct status icon when the page loads (if needed)
+window.onload = function() {
+    updateWatchStatusIcon(); // Ensures the correct icon is displayed when the page loads
+};
