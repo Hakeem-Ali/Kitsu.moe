@@ -164,6 +164,14 @@ nav>a>img {
     top: 4em;
     padding: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 9999;
+    border-radius: 8px;
+}
+
+nav {
+    position: relative;
+    z-index: 100;
 }
 
 .dropdown_content>div {
@@ -497,6 +505,7 @@ main {
 .star {
     width: 35px;
     height: 24px;
+    
 }
 
 #stars>div {
@@ -517,6 +526,9 @@ main {
     font-size: 18px;
 }
 
+.user_rating{
+    margin-top: 10px;
+}
 
 .black_text {
     font-size: 1.5em;
@@ -566,7 +578,7 @@ main {
     }
 
     .black_text {
-        color: #181818;
+        color: #430830;
     }
 
     .align_section_info h3 {

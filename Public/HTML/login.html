@@ -21,8 +21,8 @@
                 <ul class="make_center_header">
                     <li><a href="../index.html">Kitsu</a></li>
                     <li><a href="../index.html">Home</a></li>
-                    <li onclick="toggleDropdown()">Genres</li>
-                    <li><a href="catalogue.html">Catalogue</a></li>
+                    <li id="genres-btn">Genres</li>
+                    <li><a href="catalogue.html?sort=popular">Catalogue</a></li>
                 </ul>
             </nav>
             <div id="login_area">
@@ -48,22 +48,22 @@
     -->
     <div id="menu" class="dropdown_content make_center glass_pane">
         <div class="make_vertical">
-            <a onclick="applyFilter('Action')" href="catalogue.html">Action</a>
-            <a onclick="applyFilter('Adventure')" href="catalogue.html">Adventure</a>
-            <a onclick="applyFilter('Comedy')" href="catalogue.html">Comedy</a>
-            <a onclick="applyFilter('Drama')" href="catalogue.html">Drama</a>
+            <a href="catalogue.html?genre=Action">Action</a>
+            <a href="catalogue.html?genre=Adventure">Adventure</a>
+            <a href="catalogue.html?genre=Comedy">Comedy</a>
+            <a href="catalogue.html?genre=Drama">Drama</a>
         </div>
         <div class="make_vertical">
-            <a onclick="applyFilter('Fantasy')" href="catalogue.html">Fantasy</a>
-            <a onclick="applyFilter('Historical')" href="catalogue.html">Historical</a>
-            <a onclick="applyFilter('Horror')" href="catalogue.html">Horror</a>
-            <a onclick="applyFilter('Mystery')" href="catalogue.html">Mystery</a>
+            <a href="catalogue.html?genre=Fantasy">Fantasy</a>
+            <a href="catalogue.html?genre=Historical">Historical</a>
+            <a href="catalogue.html?genre=Horror">Horror</a>
+            <a href="catalogue.html?genre=Mystery">Mystery</a>
         </div>
         <div class="make_vertical">
-            <a onclick="applyFilter('Romance')" href="catalogue.html">Romance</a>
-            <a onclick="applyFilter('Sci-Fi')" href="catalogue.html">Sci-Fi</a>
-            <a onclick="applyFilter('Shounen')" href="catalogue.html">Shounen</a>
-            <a onclick="applyFilter('Supernatural')" href="catalogue.html">Supernatural</a>
+            <a href="catalogue.html?genre=Romance">Romance</a>
+            <a href="catalogue.html?genre=Sci-Fi">Sci-Fi</a>
+            <a href="catalogue.html?genre=Shounen">Shounen</a>
+            <a href="catalogue.html?genre=Supernatural">Supernatural</a>
         </div>
     </div>
 

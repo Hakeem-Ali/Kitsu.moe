@@ -16,8 +16,8 @@
                 <ul class="make_center_header">
                     <li><a href="#">Kitsu</a></li>
                     <li><a href="#">Home</a></li>
-                    <li onclick="toggleDropdown()">Genres</li>
-                    <li><a href="HTML/catalogue.html">Catalogue</a></li>
+                    <li id="genres-btn">Genres</li>
+                    <li><a href="HTML/catalogue.html?sort=popular">Catalogue</a></li>
                 </ul>
 
             </nav>
@@ -44,22 +44,22 @@
             -->
     <div id="menu" class="dropdown_content make_center glass_pane">
         <div class="make_vertical">
-            <a onclick="applyFilter('Action')" href="HTML/catalogue.html">Action</a>
-            <a onclick="applyFilter('Adventure')" href="HTML/catalogue.html">Adventure</a>
-            <a onclick="applyFilter('Comedy')" href="HTML/catalogue.html">Comedy</a>
-            <a onclick="applyFilter('Drama')" href="HTML/catalogue.html">Drama</a>
+            <a href="HTML/catalogue.html?genre=Action">Action</a>
+            <a href="HTML/catalogue.html?genre=Adventure">Adventure</a>
+            <a href="HTML/catalogue.html?genre=Comedy">Comedy</a>
+            <a href="HTML/catalogue.html?genre=Drama">Drama</a>
         </div>
         <div class="make_vertical">
-            <a onclick="applyFilter('Fantasy')" href="HTML/catalogue.html">Fantasy</a>
-            <a onclick="applyFilter('Historical')" href="HTML/catalogue.html">Historical</a>
-            <a onclick="applyFilter('Horror')" href="HTML/catalogue.html">Horror</a>
-            <a onclick="applyFilter('Mystery')" href="HTML/catalogue.html">Mystery</a>
+            <a href="HTML/catalogue.html?genre=Fantasy">Fantasy</a>
+            <a href="HTML/catalogue.html?genre=Historical">Historical</a>
+            <a href="HTML/catalogue.html?genre=Horror">Horror</a>
+            <a href="HTML/catalogue.html?genre=Mystery">Mystery</a>
         </div>
         <div class="make_vertical">
-            <a onclick="applyFilter('Romance')" href="HTML/catalogue.html">Romance</a>
-            <a onclick="applyFilter('Sci-Fi')" href="HTML/catalogue.html">Sci-Fi</a>
-            <a onclick="applyFilter('Shounen')" href="HTML/catalogue.html">Shounen</a>
-            <a onclick="applyFilter('Supernatural')" href="HTML/catalogue.html">Supernatural</a>
+            <a href="HTML/catalogue.html?genre=Romance">Romance</a>
+            <a href="HTML/catalogue.html?genre=Sci-Fi">Sci-Fi</a>
+            <a href="HTML/catalogue.html?genre=Shounen">Shounen</a>
+            <a href="HTML/catalogue.html?genre=Supernatural">Supernatural</a>
         </div>
     </div>
 
@@ -74,43 +74,49 @@
             </div>
 
             <div class="make_center">
-                <button><a target="_blank" href="HTML/catalogue.html">See Popular Anime</a></button>
+                <button><a href="HTML/catalogue.html?sort=popular">See Popular Anime</a></button>
             </div>
 
         </section>
         <section class="card_content">
 
             <div class="extra_spacing_for_cards">
-                <div class="card">
-                    <img src="Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
-                    <div class="card_container glass_pane">
-                        <h4><b>Gintama</b></h4>
-                        <p>Score: 8.93</p>
-                        <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                <a href="HTML/info.html?mal_id=918">
+                    <div class="card">
+                        <img src="Media/gintama_poster.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Gintama</b></h4>
+                            <p>Score: 8.93</p>
+                            <p>Genres: Action, Comedy, Drama, Historical, Shounen</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
 
             <div class="extra_spacing_for_cards">
-                <div class="card">
-                    <img src="Media/attack_on_titan.jpg" alt="Avatar" style="width:100%">
-                    <div class="card_container glass_pane">
-                        <h4><b>Attack on Titan</b></h4>
-                        <p>Score: 8.56</p>
-                        <p>Genres: Action, Drama, Fantasy, Shounen</p>
+                <a href="HTML/info.html?mal_id=21">
+                    <div class="card">
+                        <img src="Media/one_piece.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>One Piece</b></h4>
+                            <p>Score: 8.73</p>
+                            <p>Genres: Action, Drama, Fantasy, Shounen</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
 
             <div class="extra_spacing_for_cards">
-                <div class="card">
-                    <img src="Media/death_note.jpg" alt="Avatar" style="width:100%">
-                    <div class="card_container glass_pane">
-                        <h4><b>Death Note</b></h4>
-                        <p>Score: 8.62</p>
-                        <p>Genres: Psychological, Supernatural, Suspense</p>
+                <a href="HTML/info.html?mal_id=1535">
+                    <div class="card">
+                        <img src="Media/death_note.jpg" alt="Avatar" style="width:100%">
+                        <div class="card_container glass_pane">
+                            <h4><b>Death Note</b></h4>
+                            <p>Score: 8.62</p>
+                            <p>Genres: Psychological, Supernatural, Suspense</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
 
         </section>
