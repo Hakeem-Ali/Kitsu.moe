@@ -586,6 +586,18 @@ main {
     }
 }
 
+@media screen and (max-width: 1700px) {
+    .first_to_go{
+        color: white;
+    }
+}
+
+@media screen and (max-width: 1700px) {
+    .second_to_go {
+        color: white;
+    }
+}
+
 .upper_card_name {
     margin-bottom: 1em;
 }
