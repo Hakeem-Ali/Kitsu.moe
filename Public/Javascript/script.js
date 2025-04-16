@@ -31,6 +31,8 @@ const isUserLoggedIn = () => {
     return user !== null;
 };
 
+let isLoggedIn = false;
+
 document.addEventListener("DOMContentLoaded", function () {
 
     //Firebase login function
@@ -38,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
         console.log("User signed up:", userCredential.user);
+        isLoggedIn = true;
         alert("Account created and signed in!");
     })
     .catch((error) => {
@@ -65,6 +68,13 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
         console.error("Login form not found. Make sure the ID is 'login_form'");
     }
+
+    firebase.auth().onAuthStateChanged(function(user) {
+        if(user){
+            console.log("User is logged in");
+            isLoggedIn=true;
+        }
+    });
 });
 
 // Catalogue Script
@@ -143,6 +153,10 @@ function filterAndDisplay() {
 // Display anime cards
 function showAll(records) {
     const result = document.querySelector('#anime_cards');
+    if(!result){
+        console.error("Element #anime_cards not found");
+    }
+
     let html = '';
 
     for (let rec of records) {
@@ -292,13 +306,18 @@ function displayBlueIcon() {
 
 // Function to update the icon based on dropdown selection
 function updateWatchStatusIcon() {
-    const user = firebase.auth().currentUser;
-    if (!user) {
+    if (!isLoggedIn) {
         console.log("Blocked icon update: User not logged in");
         return;
     }
 
-    const status = document.getElementById('status').value;
+    const statusDropdown = document.getElementById('status');
+    if(!statusDropdown){
+        console.error("Status dropdown not found");
+        return;
+    }
+
+    const status = statusDropdown.value;
     switch (status) {
         case 'watching':
             displayGreenIcon();
@@ -315,48 +334,62 @@ function updateWatchStatusIcon() {
     }
 }
 
-//Final login check on page load
-firebase.auth().onAuthStateChanged(function(user) {
+
+document.addEventListener('DOMContentLoaded', function() {
+    const statusDropdown = document.getElementById('status');
+    const icon = document.getElementById('watch_status_icon');
     const stars = document.querySelectorAll('.star img');
 
+    if(!statusDropdown) {
+        console.warn("Status Dropdown not found");
+        return;
+    }
+    else{
+        console.log("Status Dropdown Found");
+    }
 
-    if (user) {
-        console.log("User is logged in");
+    firebase.auth().onAuthStateChanged(function(user) {
+        console.log("Works");
+        if (user) {
+            console.log("User is logged in");
+            isLoggedIn = true;
+    
+            if (statusDropdown) {
+                statusDropdown.disabled = false;
+                statusDropdown.title = '';
+        
+                if(!statusDropdown.dataset.listenerAttached){
+                    statusDropdown.addEventListener('change', updateWatchStatusIcon);
+                    statusDropdown.dataset.listenerAttached = 'true';
+                }
 
-        if (statusDropdown) {
-            statusDropdown.disabled = false;
-            statusDropdown.title = '';
+                updateWatchStatusIcon(); // Show correct icon
+            }
 
-            statusDropdown.addEventListener('change', function(){
-                updateWatchStatusIcon();
+            // Enable rating (if interactive)
+            stars.forEach(star => {
+                star.style.pointerEvents = 'auto';
+                star.title = '';
+            });
+        
+        } else {
+            console.log("User is not logged in");
+        
+            if (statusDropdown) {
+                statusDropdown.disabled = true;
+                statusDropdown.value = '';
+                statusDropdown.title = "Login required to update watch status.";
+            }
+        
+            if (icon) {
+                icon.innerHTML = '<p style="color: black;">Login to update status</p>';
+            }
+        
+            // Disable rating interaction
+            stars.forEach(star => {
+                star.style.pointerEvents = 'none';
+                star.title = "Login required to rate.";
             });
         }
-
-        updateWatchStatusIcon(); // Show correct icon
-
-        // Enable rating (if interactive)
-        stars.forEach(star => {
-            star.style.pointerEvents = 'auto';
-            star.title = '';
-        });
-
-    } else {
-        console.log("User is not logged in");
-
-        if (statusDropdown) {
-            statusDropdown.disabled = true;
-            statusDropdown.value = '';
-            statusDropdown.title = "Login required to update watch status.";
-        }
-
-        if (icon) {
-            icon.innerHTML = '<p style="color: gray;">Login to update status</p>';
-        }
-
-        // Disable rating interaction
-        stars.forEach(star => {
-            star.style.pointerEvents = 'none';
-            star.title = "Login required to rate.";
-        });
-    }
+    });  
 });
