@@ -139,16 +139,45 @@ function resetFilter() {
     getData(page);
 }
 
+//------------------------------------------------------------------------------
 // Filter & display logic
+// function filterAndDisplay() {
+//     let filteredData = state;
+//     if (activeFilter) {
+//         filteredData = state.filter(anime =>
+//             anime.genres.some(genre => genre.name === activeFilter)
+//         );
+//     }
+//     showAll(filteredData);
+// }
+
+// Inside filterAndDisplay(), tweak like this:
 function filterAndDisplay() {
     let filteredData = state;
+
     if (activeFilter) {
         filteredData = state.filter(anime =>
             anime.genres.some(genre => genre.name === activeFilter)
         );
     }
-    showAll(filteredData);
+
+    if (filteredData.length === 0) {
+        showNoResultsMessage();
+    } else {
+        showAll(filteredData);
+    }
 }
+
+function showNoResultsMessage() {
+    const result = document.querySelector('#anime_cards');
+    result.innerHTML = `
+        <div class="no_results glass_pane_2">
+            <p>No anime found for this genre on this page.</p>
+            <p>Try the next page or choose a different filter.</p>
+        </div>
+    `;
+}
+//------------------------------------------------------------------------------
 
 // Display anime cards
 function showAll(records) {

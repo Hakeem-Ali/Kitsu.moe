@@ -505,7 +505,7 @@ main {
 .star {
     width: 35px;
     height: 24px;
-    
+
 }
 
 #stars>div {
@@ -526,8 +526,12 @@ main {
     font-size: 18px;
 }
 
-.user_rating{
+.user_rating {
     margin-top: 10px;
+}
+
+.watch_status_container {
+    margin-top: -10px;
 }
 
 .black_text {
@@ -578,7 +582,7 @@ main {
     }
 
     .black_text {
-        color: #430830;
+        color: #191617;
     }
 
     .align_section_info h3 {
@@ -587,16 +591,25 @@ main {
 }
 
 @media screen and (max-width: 1700px) {
-    .first_to_go{
+    .first_to_go {
+        color: white;
+    }
+
+    .second_to_go {
+        color: white;
+    }
+
+    .third_to_go {
+        color: #430830;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .third_to_go {
         color: white;
     }
 }
 
-@media screen and (max-width: 1700px) {
-    .second_to_go {
-        color: white;
-    }
-}
 
 .upper_card_name {
     margin-bottom: 1em;
@@ -686,6 +699,10 @@ select#status:focus {
 
     .align_section_info {
         margin-bottom: 200px;
+    }
+
+    .third_to_go {
+        color: white;
     }
 }
 
